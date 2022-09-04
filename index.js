@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 
 const app = express()
 const port = 4580
@@ -19,7 +20,7 @@ app.use(express.urlencoded({extended: true})); // New
 const nodeRouter = require('./src/routes/node')
 
 app.use('/', nodeRouter)
-
+console.log(process.env.TEST)
 // Listen on port 5000
 app.listen(port, () => console.log(`Listening on port ${port}`))
 
